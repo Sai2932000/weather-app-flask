@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🌤️ Weather App</h1>
+
+        <p class="subtitle">
+            Current weather information
+        </p>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="city"
+                placeholder="Enter city name"
+                value="{{ request.form.get('city', '') }}"
+                required
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+
+        {% if error %}
+
+            <div class="error">
+                ❌ {{ error }}
+            </div>
+
+        {% endif %}
+
+
+        {% if weather %}
+
+            <div class="weather-card">
+
+                <div class="location">
+
+                    <h2>
+                        📍 {{ weather.city }}
+                    </h2>
+
+                    <p>
+                        {{ weather.country }}
+                    </p>
+
+                </div>
+
+
+                <div class="main-weather">
+
+                    <div class="temperature">
+
+                        <span>
+                            {{ weather.temperature }}
+                        </span>
+
+                        <sup>°C</sup>
+
+                    </div>
+
+                    <p class="condition">
+                        {{ weather.condition }}
+                    </p>
+
+                </div>
+
+
+                <div class="details">
+
+                    <div class="detail">
+                        <span>🌡️</span>
+                        <p>Feels Like</p>
+                        <strong>
+                            {{ weather.feelslike }}°C
+                        </strong>
+                    </div>
+
+
+                    <div class="detail">
+                        <span>💧</span>
+                        <p>Humidity</p>
+                        <strong>
+                            {{ weather.humidity }}%
+                        </strong>
+                    </div>
+
+
+                    <div class="detail">
+                        <span>💨</span>
+                        <p>Wind Speed</p>
+                        <strong>
+                            {{ weather.wind_speed }} km/h
+                        </strong>
+                    </div>
+
+
+                    <div class="detail">
+                        <span>🧭</span>
+                        <p>Wind Degree</p>
+                        <strong>
+                            {{ weather.wind_degree }}°
+                        </strong>
+                    </div>
+
+
+                    <div class="detail">
+                        <span>👁️</span>
+                        <p>Visibility</p>
+                        <strong>
+                            {{ weather.visibility }} km
+                        </strong>
+                    </div>
+
+
+                    <div class="detail">
+                        <span>🔆</span>
+                        <p>UV Index</p>
+                        <strong>
+                            {{ weather.uv_index }}
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

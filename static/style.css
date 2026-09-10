@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #18232c;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: 70px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #b8c2cc;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #aeb8c2;
+    border-radius: 7px;
+    background: #2c3b4d;
+    color: white;
+    outline: none;
+}
+
+input::placeholder {
+    color: #c7ced5;
+}
+
+input:focus {
+    border-color: #2196f3;
+}
+
+button {
+    padding: 15px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+    background: #087ff5;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #066dcc;
+}
+
+.error {
+    padding: 15px;
+    margin-top: 20px;
+    color: #ff4d4d;
+    font-size: 18px;
+}
+
+.weather-card {
+    margin-top: 30px;
+    padding: 30px;
+    background: #263544;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.location h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.location p {
+    margin-top: 6px;
+    color: #b8c2cc;
+}
+
+.main-weather {
+    margin: 25px 0;
+}
+
+.temperature {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.temperature sup {
+    font-size: 28px;
+}
+
+.condition {
+    margin-top: 5px;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #d9e1e8;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.detail {
+    padding: 18px 10px;
+    background: #344657;
+    border-radius: 10px;
+}
+
+.detail span {
+    font-size: 25px;
+}
+
+.detail p {
+    margin: 8px 0;
+    color: #b8c2cc;
+    font-size: 14px;
+}
+
+.detail strong {
+    font-size: 17px;
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        margin-top: 35px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
